@@ -6,7 +6,7 @@ close all;
 addpath('CQT_toolbox_2013');
 
 % File directory and extension
-file_dir = 'C:\Users\Oguz Kaaan\Desktop\CQSS-DTW\CQSS\pitch-based\medianfiltered';
+file_dir = ''; % file path 
 
 % Text file to write the results
 fid = fopen('test.txt', 'w');
@@ -21,7 +21,7 @@ for i = 1:1 % numel(file_list)
     disp(i)
     file_path = fullfile(file_dir, file_list(i).name);
     
-    [Data, Fs] = audioread("C:\Users\Oguz Kaaan\Desktop\CQSS-DTW\CQSS\pitch-based\medianfiltered\sa1_1-2.wav");
+    [Data, Fs] = audioread(file_path);
     Data = Data(:, 1);
 
     % Apply pre-emphasis filter
